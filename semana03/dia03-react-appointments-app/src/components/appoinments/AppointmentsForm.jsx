@@ -1,17 +1,6 @@
 import { useState } from "react"
 
-const AppointmentsForm = ({ onSaveAppointment }) => {
-  const INITIAL_FORM_STATE = {
-    id: '',
-    petName: '',
-    petAge: '',
-    ownerName: '',
-    appointmentDate: '',
-    appointmentTime: '',
-    symptoms: ''
-  }
-
-  const [form, setForm] = useState(INITIAL_FORM_STATE)
+const AppointmentsForm = ({ form,setForm,onSaveAppointment,INITIAL_FORM_STATE,modificacion }) => {
 
   const handleChange = (event) => {
     // console.log(event.target.name)
@@ -23,14 +12,19 @@ const AppointmentsForm = ({ onSaveAppointment }) => {
 
   const handleSaveAppointment = (event) => {
     event.preventDefault();
-    
-    const newAppointment = {
-      ...form,
-      id: crypto.randomUUID()
-    }
-
-    console.log('Guardando cita:', newAppointment)
-    onSaveAppointment(newAppointment)
+    if (modificacion ===1){
+      const actualizaAppointment = {
+        ...form       
+      }
+      onSaveAppointment(actualizaAppointment)
+    }else{
+      const newAppointment = {
+        ...form,
+        id: crypto.randomUUID(),
+        confirm:'No'
+      }
+      onSaveAppointment(newAppointment)
+    }    
 
     setForm(INITIAL_FORM_STATE)
   }
