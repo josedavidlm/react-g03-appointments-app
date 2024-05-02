@@ -1,1 +1,2 @@
-# react-g03-appointments-app
+# Bootcamp Frontend - Java G03
+

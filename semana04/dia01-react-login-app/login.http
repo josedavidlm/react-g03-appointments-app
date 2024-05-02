@@ -1,0 +1,19 @@
+### Login
+
+POST https://dummyjson.com/auth/login
+Content-Type: application/json
+
+{
+  "username": "kminchelle",
+  "password": "0lelplR"
+}
+
+### Get all products (PUBLIC)
+
+GET https://dummyjson.com/products
+
+### Get all products (PRIVATE)
+
+GET https://dummyjson.com/auth/products
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsInVzZXJuYW1lIjoia21pbmNoZWxsZSIsImVtYWlsIjoia21pbmNoZWxsZUBxcS5jb20iLCJmaXJzdE5hbWUiOiJKZWFubmUiLCJsYXN0TmFtZSI6IkhhbHZvcnNvbiIsImdlbmRlciI6ImZlbWFsZSIsImltYWdlIjoiaHR0cHM6Ly9yb2JvaGFzaC5vcmcvSmVhbm5lLnBuZz9zZXQ9c2V0NCIsImlhdCI6MTcxMzg0NDE1MiwiZXhwIjoxNzEzODQ3NzUyfQ.w01z-WPrV6FRSUtAe-rO1XOPygqAicIzrCvxTnmKo5c

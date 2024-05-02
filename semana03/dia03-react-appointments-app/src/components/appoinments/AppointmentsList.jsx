@@ -1,15 +1,4 @@
-import AppointmentComfirm from "./AppointmentComfirm"
-
 const AppointmentsList = ({ appointments, onConfirmAppointment, onEdit, onRemove }) => {
-
-
-  const buttonComfirmCita = (appointment) => {
-    if (appointment.confirm==='SI'){
-      return "No Confirmar Cita"
-      }else{
-      return "Confirmar Cita"
-    }
-  }
 
   if (appointments.length === 0) {
     return (
@@ -23,8 +12,6 @@ const AppointmentsList = ({ appointments, onConfirmAppointment, onEdit, onRemove
       </section>
     )
   }
-
-  
 
   return (
     <>
@@ -64,9 +51,6 @@ const AppointmentsList = ({ appointments, onConfirmAppointment, onEdit, onRemove
                   <div>
                     <strong>Síntomas:</strong> {appointment.symptoms}
                   </div>
-                  <div>
-                    <strong>Cita Confirmada?:</strong> <AppointmentComfirm appointment={appointment}/>
-                  </div>
                 </div>
 
                 {/* TODO: Terminar la funcionalidad de los botones confirmar cita y editar cita */}
@@ -75,9 +59,8 @@ const AppointmentsList = ({ appointments, onConfirmAppointment, onEdit, onRemove
                   <button
                     className="p-2 bg-green-600 text-white rounded-lg cursor-pointer"
                     onClick={() => onConfirmAppointment(appointment)}
-                  
                   >
-                    {buttonComfirmCita(appointment)}                       
+                    Confirmar Cita
                   </button>
                   <button
                     className="p-2 bg-sky-600 text-white rounded-lg cursor-pointer"
